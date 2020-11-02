@@ -3,11 +3,13 @@ spring:
     active: 
     - dev
     
+---  
 spring:
   profiles: dev
   application:
     name: dev-demo
-      
+    
+---     
 spring:
   profiles: test
   application:

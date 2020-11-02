@@ -4,13 +4,28 @@ spring:
     - dev
     
 ---  
+server:
+  port: 8201
+  
 spring:
   profiles: dev
   application:
     name: dev-demo
-    
----     
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+    register-with-eureka: false   
+---   
+server:
+  port: 8202
+  
 spring:
   profiles: test
   application:
     name: test-demo
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+    register-with-eureka: false

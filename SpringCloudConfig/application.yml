@@ -21,7 +21,7 @@ server:
   port: 8202
   
 spring:
-  profiles: test
+  profiles: sit
   application:
     name: application
 eureka:

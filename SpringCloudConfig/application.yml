@@ -21,8 +21,6 @@ eureka:
   
 spring:
   profiles: test
-  application:
-    name: config-server-client
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/study01?useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
     username: root
@@ -30,7 +28,6 @@ spring:
     # Mysql8.0请改为com.mysql.cj.jdbc.Driver
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-
     #druid连接池配置
     initialSize: 5
     minIdle: 5
@@ -47,15 +44,7 @@ spring:
     filters: stat,wall,log4j
     maxPoolPreparedStatementPerConnectionSize: 20
     userGlobalDataSourceStat: true
-    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
-  cloud:
-    config:
-      uri: http://localhost:3344
-      profile: test
-      label: master
-      discovery:
-        enabled: true
-        service-id: config-server3344  
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500  
     stream:
       binders: # 在此处配置要绑定的rabbitmq的服务信息；
         defaultRabbit: # 表示定义的名称，用于于binding整合
